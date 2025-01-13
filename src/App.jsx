@@ -5,6 +5,7 @@ import Login from './components/Login/Login'
 import Home from './components/Home/Home'
 import Profile from './components/Profile/Profile'
 import Header from './components/Header/Header'
+import PostDetail from './components/PostDetail/PostDetail'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/" element={ <Home/>} />
         <Route path="/profile" element={ <Profile/>} />
+        <Route path="/postDetail/:_id" element={ <PostDetail/>} />
       </Routes>
     </BrowserRouter>
     </>
