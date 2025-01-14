@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { login } from '../../features/auth/authSlice'
+import "./Login.scss"
+import { Link } from 'react-router-dom'
+
 const Login = () => {
     const [formData, setFormData] = useState({
         email:'',
@@ -19,11 +22,36 @@ const Login = () => {
         dispatch(login(formData))
     }
   return (
-    <form onSubmit={onSubmit}>
-        <input type="email" name="email" value={email} onChange={onChange}/>
-        <input type="password" name="password" value={password} onChange={onChange}/>
-        <button type="submit">Iniciar sesión</button>
-    </form>
+    <div className="background">
+    <div className="login-container">
+        <div className="login-card">
+            <div className="center">
+            <h2>Casi lo tienes...</h2>
+            <form className="login-form" onSubmit={onSubmit}>
+                <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={email}
+                onChange={onChange}
+                required
+                />
+                <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={password}
+                onChange={onChange}
+                required
+                />
+                <button type="submit">Login</button>
+            </form>
+            <p>Si ya tienes una cuenta, registrate <Link to="/register">aquí</Link></p>
+            </div>
+        </div>
+        </div>
+        </div>
   )
+
 }
 export default Login
