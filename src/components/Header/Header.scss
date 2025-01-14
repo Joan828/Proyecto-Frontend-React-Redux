@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .normal-link {
+    display: inline-block;
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px;
+  }
+  
+  .parent {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .title {
+    display: inline-block;
+    text-decoration: none; /* Remove underline */
+    font-size: 26px;
+    font-weight: 600;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchbar {
+    margin-left: 20px;
+  }
+  .right {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 20%;
+    padding-top: 5px;
+    text-decoration: none;
+    color: rgb(161, 63, 63);
+  }
+  button{
+    &:hover {
+        background-color: #004bb5; /* Darker blue on hover */
+      }
+    
+      &:active {
+        background-color: #00338d; /* Even darker when clicked */
+      }
+    background-color: #0062df;
+    border-radius: 20px;
+    width: 48%;
+    height: 35px;
+  }
+  
+  .line {
+    width: 100%;
+    background-color: rgb(188, 188, 188);
+    height: 1px;
+  }
+  
