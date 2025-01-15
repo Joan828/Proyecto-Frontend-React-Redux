@@ -28,7 +28,7 @@ const Header = () => {
     <div>
       <div className="parent">
         <div className="left">
-          <Link className="title" to="/home">
+          <Link className="title" to="/">
               Mern
           </Link>
             <div className="searchbar">
