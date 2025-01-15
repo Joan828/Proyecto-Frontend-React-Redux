@@ -47,6 +47,14 @@ export const unlike = createAsyncThunk("posts/unlike", async (_id) => {
   }
 });
 
+export const addPost = createAsyncThunk("posts/create", async (post) => {
+  try {
+    return await postService.addPost(post);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 
 export const postSlice = createSlice({
   name: "posts",

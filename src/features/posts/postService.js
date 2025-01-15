@@ -37,13 +37,23 @@ const getById = async (_id) => {
     return res.data;
   };
 
+  const addPost = async (post) => {
+    const token = localStorage.getItem("token");
+    const res = await axios.post(API_URL + "/create", post, {
+        headers: {
+          authorization: token,
+        },
+      } )
+    return res.data;
+  };
 
 const postService = {
   getAll,
   getById,
   getByTitle,
   like,
-  unlike
+  unlike,
+  addPost
 };
 
 export default postService;

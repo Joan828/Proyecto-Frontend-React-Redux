@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { register, reset } from '../../features/auth/authSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { notification } from "antd";
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {   
     const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ const Register = () => {
     })
     const {name,email,password, password2, birthday} = formData
     const dispatch = useDispatch()
+    const navigate = useNavigate
 
     const { isSuccess, message, isError } = useSelector((state) => state.auth);
 
@@ -48,6 +50,7 @@ const Register = () => {
         } else {
             return dispatch(register(formData));
         }
+        navigate("/")
     }
 
   return (

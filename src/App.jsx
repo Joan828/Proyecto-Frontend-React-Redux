@@ -11,6 +11,7 @@ import PrivateZone from './guards/PrivateZone'
 import Admin from './components/Admin/Admin'
 import AdminZone from './guards/AdminZone'
 import NotFound from './components/NotFound/NotFound'
+import AddPost from './components/AddPost/AddPost'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
         />
         <Route path="/postDetail/:_id" element={ <PostDetail/>} />
         <Route path="/search/:title" element={ <Search/>} />
+        <Route path="/addPost" element={ <AddPost/>} />
         <Route path="*" element={<NotFound/>}></Route>
       </Routes>
     </BrowserRouter>

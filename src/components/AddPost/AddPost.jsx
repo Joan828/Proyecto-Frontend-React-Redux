@@ -1,19 +1,20 @@
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { login } from '../../features/auth/authSlice'
-import "./Login.scss"
+import React, { useState } from 'react'
+import "./AddPost.scss"
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { Button } from 'antd'
+import { addPost } from '../../features/posts/postSlice'
 
-const Login = () => {
+const AddPost = () => {
     const [formData, setFormData] = useState({
-        email:'',
-        password:''
+        title:'',
+        body:''
     })
-    const {email,password} = formData
+    const {title, body} = formData
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const onChange = (e)=>{
+   const onChange = (e)=>{
         setFormData({
             ...formData,
             [e.target.name]:e.target.value,
@@ -21,7 +22,7 @@ const Login = () => {
     }
     const onSubmit = (e) => {
         e.preventDefault()
-        dispatch(login(formData))
+        dispatch(addPost(formData))
         navigate("/")
     }
   return (
@@ -29,32 +30,32 @@ const Login = () => {
     <div className="login-container">
         <div className="login-card">
             <div className="center">
-            <h2>Casi lo tienes...</h2>
+            <h2>Añadir publicación</h2>
             <form className="login-form" onSubmit={onSubmit}>
                 <input
-                type="email"
-                placeholder="Correo electrónico"
-                name="email"
-                value={email}
+                type="text"
+                placeholder="Título"
+                name="title"
+                value={title}
                 onChange={onChange}
                 required
                 />
                 <input
-                type="password"
-                placeholder="Contraseña"
-                name="password"
-                value={password}
+                type="text"
+                placeholder="Contenido"
+                name="body"
+                value={body}
                 onChange={onChange}
                 required
                 />
-                <button type="submit">Iniciar sesión</button>
+                <button type="submit">Añadir</button>
             </form>
-            <p>Si ya tienes una cuenta, registrate <Link to="/register">aquí</Link></p>
+            <Button ><Link to="/">Home</Link></Button >
             </div>
         </div>
         </div>
         </div>
   )
-
 }
-export default Login
+
+export default AddPost
