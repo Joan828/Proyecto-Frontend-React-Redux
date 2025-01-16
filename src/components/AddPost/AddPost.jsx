@@ -20,9 +20,9 @@ const AddPost = () => {
             [e.target.name]:e.target.value,
         })
     }
-    const onSubmit = (e) => {
+    const onSubmit = async(e) => {
         e.preventDefault()
-        dispatch(addPost(formData))
+        await dispatch(addPost(formData))
         navigate("/")
     }
   return (

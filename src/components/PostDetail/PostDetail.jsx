@@ -7,7 +7,7 @@ const PostDetail = () => {
     const {_id} = useParams()
     const {post} = useSelector(state => state.posts)
     const dispatch = useDispatch()
-console.log(post);
+
 
     useEffect(()=>{
         dispatch(getById(_id))
@@ -18,7 +18,7 @@ console.log(post);
         <p>Título: {post.title}</p>
         <p>Contenido: {post.body}</p>
         <p>Likes: {post.likes?.length }</p>
-        <p>Creado por: {post.userId}</p>
+        <p>Creado por: {post.userId?.name}</p>
         <p>Creado el {post.createdAt}</p>
         <p>Última modificación: {post.updatedAt}</p>
     </div>

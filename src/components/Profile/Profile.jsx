@@ -1,14 +1,25 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { getInfo } from '../../features/auth/authSlice';
+import Post from '../Post/Post';
+import { getAll } from '../../features/posts/postSlice';
 
 const Profile = () => {
-    const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch()
+    const { user } = useSelector((state) => state.auth)
+
+    useEffect(()=>{
+      dispatch(getInfo())
+      dispatch(getAll())
+    },[])
 
   return (
     <div>
-        <p>{user.name}</p>
-        <p>{user.email}</p>
-    
+         <p>Nombre: {user.name}</p>
+        <p>Correo electrónico: {user.email}</p>
+        <p>Fecha de nacimiento: {user.birthday}</p>
+        <p>Rol: {user.role}</p>
+        <Post/>
     </div>
   )
 }

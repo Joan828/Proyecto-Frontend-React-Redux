@@ -48,9 +48,10 @@ const Register = () => {
                 description: "Las contraseñas no coinciden",
             });
         } else {
-            return dispatch(register(formData));
+            dispatch(register(formData))
+            return navigate("/")
         }
-        navigate("/")
+        
     }
 
   return (
