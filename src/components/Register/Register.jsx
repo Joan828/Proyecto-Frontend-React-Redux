@@ -14,7 +14,7 @@ const Register = () => {
     })
     const {name,email,password, password2, birthday} = formData
     const dispatch = useDispatch()
-    const navigate = useNavigate
+    const navigate = useNavigate()
 
     const { isSuccess, message, isError } = useSelector((state) => state.auth);
 
@@ -40,7 +40,7 @@ const Register = () => {
             [e.target.name]:e.target.value,
         })
     }
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault()
         if (password !== password2) {
             return notification.error({
@@ -48,7 +48,7 @@ const Register = () => {
                 description: "Las contraseñas no coinciden",
             });
         } else {
-            dispatch(register(formData))
+         await   dispatch(register(formData))
             return navigate("/")
         }
         

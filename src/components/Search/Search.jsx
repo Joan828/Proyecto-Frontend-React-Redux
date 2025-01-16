@@ -12,7 +12,8 @@ const Search = () => {
         dispatch(getByTitle(title))
     },[title])
   return (
-    <div>
+    <div className="posts">
+
         <Post/>
     </div>
   )

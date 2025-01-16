@@ -2,7 +2,7 @@ import Posts from '../Posts/Posts'
 
 const Home = () => {
   return (
-    <div>Home
+    <div className="posts">
         <Posts/>
     </div>
   )
