@@ -38,6 +38,14 @@ export const login = createAsyncThunk("auth/login", async (user) => {
           console.error(error);
         }
       });
+
+      export const getInfo = createAsyncThunk("auth/getInfo", async () => {
+        try {
+          return await authService.getInfo();
+        } catch (error) {
+          console.error(error);
+        }
+      });
       
 
 export const authSlice = createSlice({
@@ -69,8 +77,9 @@ export const authSlice = createSlice({
         state.isError = true;
         state.message = action.payload;
       })
-
-
+      .addCase(getInfo.fulfilled, (state, action) => {
+        state.user = action.payload
+      })
 
   },
 

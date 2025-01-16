@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { register, reset } from '../../features/auth/authSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { notification } from "antd";
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {   
     const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ const Register = () => {
     })
     const {name,email,password, password2, birthday} = formData
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const { isSuccess, message, isError } = useSelector((state) => state.auth);
 
@@ -38,7 +40,7 @@ const Register = () => {
             [e.target.name]:e.target.value,
         })
     }
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault()
         if (password !== password2) {
             return notification.error({
@@ -46,8 +48,10 @@ const Register = () => {
                 description: "Las contraseñas no coinciden",
             });
         } else {
-            return dispatch(register(formData));
+         await   dispatch(register(formData))
+            return navigate("/")
         }
+        
     }
 
   return (

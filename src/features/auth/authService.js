@@ -29,12 +29,26 @@ const logout = async () => {
     }
     return res.data;
   };
-  
+
+  const getInfo = async () => {
+    const token = localStorage.getItem("token");
+    const res = await axios.get(API_URL + "/getInfo", {
+      headers: {
+        authorization: token,
+      },
+    });
+    if(res.data){
+      localStorage.setItem("user",JSON.stringify(res.data))
+    }
+
+    return res.data;
+  };
 
 const authService = {
   register,
   login,
-  logout
+  logout,
+  getInfo
 };
 
 export default authService;
