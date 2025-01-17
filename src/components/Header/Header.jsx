@@ -30,24 +30,24 @@ const Header = () => {
       <div className="parent">
         <div className="left">
           <Link className="title" to="/">
-              Mern <HomeOutlined />
+              FotoHub <HomeOutlined />
           </Link>
             <div className="searchbar">
               <Input onKeyUp={handleChange} placeholder="Buscar publicación" name="text" />
             </div>
         </div>
           {user ? (
-            <>
-            <Link to="/profile">{user.name} <UserOutlined /></Link>
+            <div className="right">
             <Link to="/AddPost"><Button  type="primary">Añadir publicación</Button></Link>
+            <Link to="/profile" className="profile-name">{user.name} <UserOutlined /></Link>
 
-            <Button onClick={onLogout}>Logout</Button>
-            </>
+            <Button onClick={onLogout} type="primary" danger>Logout</Button>
+            </div>
           ) : (
             
             <div className="right">
-              <button><Link className="normal-link" to="/login">Iniciar sesión</Link> </button>
-              <button><Link className="normal-link" to="/register">Register</Link></button>
+              <button className="button-link"><Link className="link" to="/login">Iniciar sesión</Link> </button>
+              <button className="button-link"><Link className="link" to="/register">Register</Link></button>
             </div>
         )}
           

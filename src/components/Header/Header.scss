@@ -4,25 +4,38 @@
     box-sizing: border-box;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
-  
-  .normal-link {
-    display: inline-block;
-    color: #ffffff; /* White text */
-    text-decoration: none; /* Remove underline */
-    font-size: 16px;
+  .profile-name{
+    margin: 0 15px;
   }
-  
+  .button-link {
+    display: inline-block;
+    font-size: 20px;
+    width: 150px;
+    margin: 5px;
+    background: #0062df;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .link{
+    color: #ffffff;
+    text-decoration: none;
+  }
+
   .parent {
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(163, 216, 251);
   }
   
   .title {
     display: inline-block;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
     font-size: 26px;
     font-weight: 600;
   }
@@ -37,9 +50,9 @@
   }
   .right {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     text-align: center;
-    width: 20%;
+    width: 40%;
     padding-top: 5px;
     text-decoration: none;
     color: rgb(161, 63, 63);
@@ -52,9 +65,11 @@
       &:active {
         background-color: #00338d; /* Even darker when clicked */
       }
+      .user{
+        width: 180px;
+      }
     background-color: #0062df;
     border-radius: 20px;
-    width: 48%;
     height: 35px;
   }
   

@@ -29,7 +29,8 @@ const Login = () => {
     <div className="login-container">
         <div className="login-card">
             <div className="center">
-            <h2>Casi lo tienes...</h2>
+            <h1>Iniciar Sesión</h1>
+            <h2 className="login-title">Casi lo tienes...</h2>
             <form className="login-form" onSubmit={onSubmit}>
                 <input
                 type="email"
@@ -47,9 +48,11 @@ const Login = () => {
                 onChange={onChange}
                 required
                 />
-                <button type="submit">Iniciar sesión</button>
+                <div className="button-div">
+                    <button type="submit" className="button-link">Iniciar sesión</button>
+                </div>
             </form>
-            <p>Si ya tienes una cuenta, registrate <Link to="/register">aquí</Link></p>
+            <p className="register-link">Si no tienes una cuenta, registrate <Link to="/register">aquí</Link></p>
             </div>
         </div>
         </div>
