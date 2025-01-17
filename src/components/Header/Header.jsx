@@ -41,13 +41,13 @@ const Header = () => {
             <Link to="/AddPost"><Button  type="primary">Añadir publicación</Button></Link>
             <Link to="/profile" className="profile-name">{user.name} <UserOutlined /></Link>
 
-            <Button onClick={onLogout} type="primary" danger>Logout</Button>
+            <Button onClick={onLogout} type="primary" danger>Cerrar sesión</Button>
             </div>
           ) : (
             
             <div className="right">
               <button className="button-link"><Link className="link" to="/login">Iniciar sesión</Link> </button>
-              <button className="button-link"><Link className="link" to="/register">Register</Link></button>
+              <button className="button-link"><Link className="link" to="/register">Registrarse</Link></button>
             </div>
         )}
           

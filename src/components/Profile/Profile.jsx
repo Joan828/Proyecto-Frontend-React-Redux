@@ -15,7 +15,7 @@ const Profile = () => {
     },[])
 
   return (
-    <div>
+    <div className="profile">
          <p>Nombre: {user.name}</p>
         <p>Correo electrónico: {user.email}</p>
         <p>Fecha de nacimiento: {user.birthday}</p>

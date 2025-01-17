@@ -40,7 +40,7 @@ const Post = () => {
         key={post._id}
         hoverable
         style={{
-          width: 400,
+          width: 418,
         }}
         cover={
         <Link to={"/postDetail/" + post._id}>

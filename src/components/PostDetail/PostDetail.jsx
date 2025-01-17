@@ -16,7 +16,7 @@ const PostDetail = () => {
     },[])
 
   return (
-    <div className="posts-profile">
+    <div className="posts-detail">
     <Card
         key={post._id}
         hoverable
